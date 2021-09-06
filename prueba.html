@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Hola Mundo JavaScript-->
+    <script language="JavaScript">
+        alert("¡Hola Mundo!");
+    </script>
+
+    <!--Habilitar y deshabilitar las funciones de JavaScript del navegador-->
+    <!--Configuración, Permisos, JavaScript-->
+   
+    <title>Ejercicios  iniciales en JavaScrip</title>
+
+    <style>
+        h1 { color: green;}
+        h2 { font-family: Impact;}
+        body {text-align: center;}
+    </style>
+
+</head>
+<body>
+
+    <h1>Bienvenidos </h1>
+    <h2>JAva Script</h2>
+    <h3 id="header">Esto es JavaScript</h3>
+    <p>
+        Ejemplo de doble click sobre el botón para mostrar un "Mensaje de alerta":
+    </p>
+
+    <input type="text" name="numero" id="numero" placeholder="Introduce un número"  value=""  class="data" required onKeyUp="javascript:validarSiNumero(this.value)" />
+    <br>
+    <br>
+    <div class = "correo">
+    <input type="text" name="email" id="correo"  placeholder="Introduce un correo" value=""  class="data" required onKeyUp="javascript:validateMail('correo')" />
+    </div>
+    <br>
+    <p>
+        Ingresa la fecha en formato dd-mm-yyyy
+    </p>
+        <input id="fecha">
+        <button type="button" onclick="validarFecha()">Confirmar</button>
+    <br>
+    <br>
+
+    <button ondblclick="myalert()">
+    Mostrar mensaje de alerta</button>
+
+    <!--Encender y apagar un foco-->
+    <br>
+    <br>
+    <button  onclick="document.getElementById('myImage').src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Oxygen480-actions-help-hint.svg/1024px-Oxygen480-actions-help-hint.svg.png'">Encendido</button>
+    <img id="myImage" src="https://ahorrodegasolina1.files.wordpress.com/2011/07/fco.jpg" style="width: 100px;" />
+    <button onclick="document.getElementById('myImage').src='https://ahorrodegasolina1.files.wordpress.com/2011/07/fco.jpg'">Apagado</button>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <button onclick="document.getElementById('myImages').src='https://img.freepik.com/vector-gratis/perfil-hombre-dibujos-animados_18591-58483.jpg?size=338&ext=jpg'">Hombre</button>
+    <img id="myImages" src="https://img2.freepng.es/20180701/eta/kisspng-computer-icons-user-profile-avatar-icon-5b3899483fa7a8.4711163815304359122607.jpg" style="width: 100px;" />
+    <button onclick="document.getElementById('myImages').src='https://image.freepik.com/vector-gratis/dibujos-animados-perfil-mujer_18591-58475.jpg'">Mujer</button>
+    <br>
+    <br>
+
+    <script>
+
+    /*Habilitar y deshabilitar las funciones de JavaScript del navegador*/
+    document.body.appendChild(document.createTextNode('Hola Mundo JS'));
+    var h3 = document.getElementById('header');
+    h3 = document.getElementsByTagName('h3')[0];
+
+    /*Mensaje de Alerta al darle doble click a un botton*/
+    function myalert() {
+        alert("test\n "+ "mensaje de alerta "+ "sobre un boton");
+    }
+    
+    /*Validar que un input sea exclusivo de tipo numérico*/
+    function validarSiNumero(numero){
+    if (!/^([0-9])*$/.test(numero))
+      alert("El valor " + numero + " no es un número");
+
+    
+    }
+
+    /*Validar un correo electrónico*/
+    function validateMail(correo){
+    Object=document.getElementById(correo);
+    valueForm=Object.value;
+    var patron=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+    if(valueForm.search(patron)==0){
+        Object.style.color="#000";
+        return;
+    } Object.style.color="#f00";
+    }
+
+    /*Validar que un input sea de tipo fecha*/
+    function validarFecha()
+            {
+                var date_regex = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/;
+                var fecha = document.getElementById("fecha").value;
+                if (date_regex.test(fecha)) 
+                {
+                    alert("Fecha correcta")
+                }else{
+                    alert("Fecha incorrecta")
+                     }
+            }
+    
+
+    </script> 
+    <noscript>Tu navegador no soporta javascript o está deshabilitado</noscript>
+
+</body>
+</html>
